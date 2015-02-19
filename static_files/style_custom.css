@@ -1,0 +1,116 @@
+
+
+.player_list label {
+  display: inline-block;
+  margin-left: 12px;
+}
+
+.champ_tbl td {
+  width: 30px;
+  text-align: center;
+}
+
+.champ_game_tbl td {
+  width: 30px;
+  text-align: center;
+}
+
+.champ_games > div {
+  margin-right: 5%;
+}
+
+.champ_games > div > table {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.champ_tbl .winner, .champ_game_tbl .winner {
+  background-color: #C4E9A9;
+}
+.champ_tbl .winner, .champ_game_tbl .draw {
+  background-color: #E9F28F;
+}
+
+.champ_tbl td.label, .champ_game_tbl td.label {
+  width: 60px;
+  text-align: left;
+}
+
+.champ_games .col-220 {
+  width: 27%;
+}
+
+.champ_games_tbl input {
+  text-align: right;
+}
+
+.refresh_btn {
+  cursor: pointer;
+}
+
+.refresh_disabled {
+  cursor: default;
+  opacity: .6;
+}
+
+.group_qualified {
+  background-color: #E2F2D7;
+}
+
+.stat_rank_up, .stat_rank_down {
+  border: 1px solid #DDDDDD;
+  font-size: 70%;
+  padding: 0 2px;
+  position: relative;
+  top: -6px;
+}
+
+.stat_rank_up {
+  background-color: #E2F2D7;
+}
+
+.stat_rank_down {
+  background-color: #FFC1C1;
+}
+
+.display_none {
+  display: none;
+}
+
+.bold_text {
+  font-weight: 700;
+}
+
+.extra {
+  background-color: #777;
+  border-radius: 0.25em;
+  color: #fff;
+  cursor: pointer;
+  display: inline;
+  float: right;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.2em 0.6em 0.3em;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+  visibility: hidden;
+}
+.champ_game_tbl .active {
+  background-color: #5cb85c;
+  visibility: visible;
+}
+
+.champ_game_tbl:hover .extra {
+  visibility: visible;
+}
+
+.playoff_tbl .champ_game .game_penalty {
+  visibility: hidden;
+}
+
+.playoff_tbl .champ_game input {
+  padding: 0; width: auto;
+}
