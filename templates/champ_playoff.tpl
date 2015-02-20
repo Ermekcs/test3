@@ -22,14 +22,14 @@
               <td colspan="2">Group - <?php echo $group['title'] ?><span class="extra <?php echo ($game['extra']) ? 'active' : ''?>" data-game_id="<?php echo $game['game_id'] ?>" >extra</span></td>
             </tr>
               <tr class="<?php echo ($winner1) ? 'winner' : '' ?>">
-              <td class="label"><?php echo $this->players[$game['player1']]['name'] ?></td>
+              <td class="label"><?php echo $this->players[$game['player1']]['name'] . (isset($this->clubs[$game['player1']]) ? ' (' . $this->clubs[$game['player1']] . ')' : ''); ?></td>
               <td>
                   <input type="text" class="game_point player1" size="2" name="game_<?php echo $game['game_id'] . '_' . $game['player1'];?>" value="<?php echo $game['point1']; ?>"/>
                   <input type="text" class="game_penalty penalty1" <?php if ($penalty) : ?>style="visibility: visible"<?php endif; ?> size="2" name="penalty_<?php echo $game['game_id'] . '_' . $game['player1'];?>" value="<?php echo $game['penalty1']; ?>"/>
               </td>
             </tr>
               <tr class="<?php echo ($winner2) ? 'winner' : '' ?>">
-              <td class="label"><?php echo $this->players[$game['player2']]['name'] ?></td>
+              <td class="label"><?php echo $this->players[$game['player2']]['name'] . (isset($this->clubs[$game['player2']]) ? ' (' . $this->clubs[$game['player2']] . ')' : ''); ?></td>
               <td>
                   <input type="text" class="game_point player2" size="2" name="game_<?php echo $game['game_id'] . '_' . $game['player2'];?>" value="<?php echo $game['point2']; ?>"/>
                   <input type="text" class="game_penalty penalty2" <?php if ($penalty) : ?>style="visibility: visible"<?php endif; ?> size="2" name="penalty_<?php echo $game['game_id'] . '_' . $game['player2'];?>" value="<?php echo $game['penalty2']; ?>"/>

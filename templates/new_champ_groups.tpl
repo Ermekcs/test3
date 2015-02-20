@@ -50,7 +50,7 @@
         <ul id="group_<?php echo $group_num; ?>">
           <?php foreach ($players as $player) : ?>
           <li class="player_list col-940 grid">
-            <label id="player_<?php echo $player['player_id']; ?>" style="opacity: 0;"><?php echo $player['name']; ?></label>
+            <label id="player_<?php echo $player['player_id']; ?>" style="opacity: 0;"><?php echo $player['name'] . "  ( {$clubs[$player['player_id']]} )"; ?></label>
           </li>
           <?php endforeach; ?>
         </ul>
@@ -71,6 +71,7 @@
     <form method="post" style="display: none;">
       <input type="hidden" id="champ_name" name="champ_name" value="Tournament #<?php echo $new_champ_num; ?>"/>
       <input type="hidden" name="groups" value='<?php echo json_encode($group_players); ?>'/>
+      <input type="hidden" name="clubs" value='<?php echo json_encode($clubs); ?>'/>
       <button type="submit" name="action" value="save" style="display: none;" id="submit_form"/>
     </form>
   </div><!-- end of .call-to-action -->

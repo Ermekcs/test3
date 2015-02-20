@@ -26,6 +26,7 @@
       <li class="player_list col-300 grid">
         <input type="checkbox" name="players[]" value="<?php echo $player['player_id']; ?>" id="player_<?php echo $player['player_id']; ?>" checked="checked">
         <label for="player_<?php echo $player['player_id']; ?>"><?php echo $player['name']; ?></label>
+        <input type="text" name="clubs[<?php echo $player['player_id']; ?>]" value="" id="club_<?php echo $player['player_id']; ?>">
       </li>
       <?php endforeach; ?>
       <li class="col-300 grid fit"></li>

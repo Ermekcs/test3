@@ -858,4 +858,26 @@ class champ
 
     return he_database::affected_rows();
   }
+
+  public static function save_player_clubs($champ_id, $clubs = array())
+  {
+    if (!$champ_id || !$clubs) { return false; }
+
+    $club_list = array();
+    foreach ($clubs as $player_id => $club) {
+      $club_list[] = he_database::placeholder("(?, ?, '?')", $champ_id, $player_id, $club);
+    }
+    $club_str = implode(',', $club_list);
+
+    $sql = "INSERT INTO `player_clubs` (`champ_id`, `player_id`, `club`) VALUES {$club_str}";
+    he_database::query($sql);
+  }
+
+  public static function get_champ_clubs($champ_id)
+  {
+    if (!$champ_id) { return false; }
+
+    $sql = he_database::placeholder("SELECT `player_id`, `club` FROM  `player_clubs` WHERE `champ_id` = ?", $champ_id);
+    return he_database::fetch_column($sql, true);
+  }
 }
